@@ -12,6 +12,13 @@ typedef enum {
     HLT
 } InstructionSet;
 
+typedef enum {
+    A, B, C, D, E, F,
+    NUM_OF_REGISTERS
+} Registers;
+
+static int registers[NUM_OF_REGISTERS];
+
 const int program[] = {
     PSH, 5,
     PSH, 6,

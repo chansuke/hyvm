@@ -19,3 +19,12 @@ const int program[] = {
     POP,
     HLT
 };
+
+int main() {
+    while (running) {
+      int x = fetch();
+      if (x == HLT) running = false;
+      ip++;
+    }
+}
+

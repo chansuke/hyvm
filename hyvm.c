@@ -20,6 +20,25 @@ const int program[] = {
     HLT
 };
 
+void eval(int instr) {
+    switch (instr) {
+        case HLT: {
+            running = false;
+            break
+        }
+        case PSH: {
+            sp++;
+            stack[sp] = program[++ip];
+            break;
+        }
+        case POP: {
+            int val_popped = stack[sp--];
+            printf("popped %d\n", val_popped)
+            break;
+        }
+    }
+}
+
 int main() {
     while (running) {
       int x = fetch();
